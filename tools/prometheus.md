@@ -4,10 +4,14 @@ description: Prometheus
 
 # Prometheus
 
-SoundCloud사에서 만든 오픈소스 시스템 모니터링 도구
+CNCF 프로젝트 중 하나로 시스템과 서비스를 모니터링하는 도구이다.
 
-### Prometheus 아키텍처 <a href="#prometheus-prometheus" id="prometheus-prometheus"></a>
+Kubernetes 모니터링 도구의 거의 표준이다.
 
+### Prometheus architecture <a href="#prometheus-prometheus" id="prometheus-prometheus"></a>
+Prometheus는 Service Discovery, Jobs/Exporters, Pushgateway, Prometheus Server, Alertmanageer 컴포넌트로 구성되어 있다.
+
+각 Prometheus 컴포넌트에 대해 알아보자.
 
 
 ### Jobs/exporters <a href="#prometheus-jobs-exporters" id="prometheus-jobs-exporters"></a>
