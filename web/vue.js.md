@@ -16,11 +16,13 @@ Vue는 Virtual DOM이 변경될 때마다 Real DomOC  &#x20;
 
 ### Component
 
+![](../.gitbook/assets/vue\_component.jpg)
 
+![](../.gitbook/assets/vue\_emit.jpg)
+
+![](../.gitbook/assets/vue\_watcher.jpg)
 
 ### Life Cycle
-
-
 
 
 
