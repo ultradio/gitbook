@@ -13,6 +13,7 @@
   * [Kubernetes Authentication](kubenetes/kubernetes-authentication-1.md)
   * [Istio](kubenetes/kubernetes-authentication.md)
   * [Knative](kubenetes/knative.md)
+  * [Helm Subcharts](kubenetes/helm-subcharts.md)
 * [KUBEFLOW](kubeflow/README.md)
   * [Kubeflow](kubeflow/kubeflow.md)
   * [Kubeflow Katib](kubeflow/kubeflow-katib.md)
