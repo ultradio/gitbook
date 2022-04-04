@@ -7,7 +7,7 @@
   * [Kubernetes Spark Operator](spark/kubernetes-spark-operator.md)
   * [Spark Tuning](spark/spark-tuning.md)
   * [Advanced Analytics with Spark](spark/advanced-analytics-with-spark.md)
-    * [Anomaly Detection](spark/advanced-analytics-with-spark/anomaly-detection.md)
+    * [Anomaly Detection in Network Traffic with K-means](spark/advanced-analytics-with-spark/anomaly-detection.md)
   * [Spark Development Environment](spark/spark-development-environment.md)
 * [KUBENETES](kubenetes/README.md)
   * [Kubernetes](kubenetes/kubernetes.md)
