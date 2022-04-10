@@ -8,7 +8,7 @@ description: Data Serialization, Memory Tuning, Garbage Collection Tuning
 
 객체를 직렬화할 때 너무 느리면 애플리케이션 전체 성능이 크게 저하될 수 있다. Spark 와 같은 분산 환경에서 데이터 직렬화는 성능에 많은 영향을 미친다.
 
-Spark는 워커 노드들 사이에 데이터를 셔플링 할 때, 혹은 RDD를 디스크에 저장할 때 직렬화한다. Spark는 직렬화 성능 향상을 위해 Kryo Serializer를 사용할 수 있으며, Java Serializer 사용할 때 보다 10배 이상 성능 향상이 가능하다. Kryo Serializer 사용하려면 Spark 설정 파일에서 Kryo 직렬화 설정하면 된다.
+**Spark는 워커 노드들 사이에 데이터를 셔플링 할 때, 혹은 RDD를 디스크에 저장할 때 직렬화한다.** Spark는 직렬화 성능 향상을 위해 Kryo Serializer(크리오 직렬화)를 사용할 수 있으며, Java Serializer 사용할 때 보다 10배 이상 성능 향상이 가능하다. Kryo Serializer 사용하려면 Spark 설정 파일에서 Kryo 직렬화 설정하면 된다.
 
 Kyro 사용 설정
 
@@ -30,7 +30,7 @@ val sc = new SparkContext(conf)
 
 ### Memory Tuning
 
-직렬화를 잘 수행하면 메모리 최적화에도 도움이 된다. Spark Storage Level 설정을 StorageLevel.MEMORY\_ONLY\_SER 로 설정하면 데이터를 직렬화해서 메모리에 저장할 수 있다. RDD 파티션을 바이트 배열 하나로 만들어 저장하기 때문에 메모리 사용량을 줄일 수 있다.
+직렬화를 잘 수행하면 메모리 최적화에도 도움이 된다. Spark Storage Level 설정을 S**torageLevel.MEMORY\_ONLY\_SER 로 설정하면 데이터를 직렬화해서 메모리에 저장**할 수 있다. RDD 파티션을 바이트 배열 하나로 만들어 저장하기 때문에 메모리 사용량을 줄일 수 있다.
 
 하지만 데이터를 직렬화하면 메모리를 줄일 수는 있으나, 데이터에 접근할 때 역직렬화 해야 하기 때문에 데이터 접근 시간이 더 오래 걸릴 수 있다.
 
@@ -38,11 +38,12 @@ val sc = new SparkContext(conf)
 
 ### Garbage Collection Tuning
 
-Java 는 메모리를 확보하기 위해 주기적으로 오래된 객체를 추적해서 제거하는 GC 작업을 수행하는데, 이 과정에서 GC 오버헤드가 발생한다.
+Java 는 메모리를 확보하기 위해 **주기적으로 오래된 객체를 추적해서 제거하는 GC 작업을 수행하는데, 이 과정에서 GC 오버헤드가 발생**한다.
 
 GC 비용을 낮추는 방법에는 크게 두가지가 있다.
 
-첫번째는 GC 비용이 Java 객체 수와 비례하기 때문에객체 수를 줄이면 GC 비용을 낮출 수 있다. 두번째는 객체를 직렬화해서 저장하면 RDD 파티션 마다 바이트 배열 객체 하나로 만들 수 있다.
+첫번째는 GC 비용이 Java 객체 수와 비례하기 때문에 객체 수를 줄이면 GC 비용을 낮출 수 있다.\
+두번째는 객체를 직렬화해서 저장하면 RDD 파티션 마다 바이트 배열 객체 하나로 만들 수 있다.
 
 GC 가 문제가 되는지 디버깅하려면 Spark 애플리케이션을 실행할 때 Java 옵션에 -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamp 설정하면 GC가 발생할 때 마다 로그를 출력할 수 있다.
 
