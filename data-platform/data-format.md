@@ -8,7 +8,7 @@ description: Parquet, ORC, Avro
 
 ![http://www.hanaexam.com/p/column-vs-row-data-storage.html](<../.gitbook/assets/image (40).png>)
 
-![http://www.hanaexam.com/p/column-vs-row-data-storage.html](<../.gitbook/assets/image (41).png>)
+![http://www.hanaexam.com/p/column-vs-row-data-storage.html](<../.gitbook/assets/image (41) (1).png>)
 
 ### Columnar Database Storage Formats
 
