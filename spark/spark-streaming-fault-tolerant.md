@@ -26,10 +26,15 @@ Spark Streaming 에서 WAL 을 사용하여 데이터 유실을 막을 수 있�
 
 1.  Receiver에서 Block metadata를 LOG파일에 저장 (파랑색)
 
-    Spark Executor에서 실행되는 Kafka Receiver는 입력 스트림을 여러 Block으로 나눠서 Executor Memory 에 저장한다. Block metadata와 Block data를 Fault-tolerant 파일 시스템(예, HDFS)에 LOG파일로 저장한 후, Kafka Offset 을 Zookeeper 에 업데이트 한다. Block metadata 에는 Executor Memory 저장한 데이터 위치(reference Id)와 LOG파일에 저장한 Block data 의 offset 정보를 담고 있다.
-2. StreamingContext에 Block metadata 전달 (녹색) Block metadata를 Application Driver의 StreamingContext 에 전달한다. 매 배치간격(batch interval)마다 StreamingContext 는 Block metadata를 이용해 RDD를 생성한다.
-3. SparkContext에서 Block data 처리 (빨강색) SparkContext에서 Jobs을 실행하여 Executor Memory 에 저장되어 있는 Block data를 처리한다.
-4. Computation 체크포인트 (오렌지색) 장애 발생시 복구할 때 사용할 Streaming computation(예, DStreams) 을 fault-tolerant 파일시스템에 Checkpointing 한다.
+    Spark Executor에서 실행되는 Kafka Receiver는 입력 스트림을 여러 Block으로 나눠서 Executor Memory 에 저장한다.\
+    **Block metadata와 Block data를 Fault-tolerant 파일 시스템(예, HDFS)에 LOG파일로 저장**한 후, **Kafka Offset 을 Zookeeper 에 업데이트** 한다.\
+    Block metadata 에는 Executor Memory 저장한 데이터 위치(reference Id)와 LOG파일에 저장한 Block data 의 offset 정보를 담고 있다.
+2. StreamingContext에 Block metadata 전달 (녹색) \
+   Block metadata를 Application Driver의 StreamingContext 에 전달한다. **매 배치간격(batch interval)마다 StreamingContext 는 Block metadata를 이용해 RDD를 생성**한다.
+3. SparkContext에서 Block data 처리 (빨강색) \
+   SparkContext에서 Jobs을 실행하여 Executor Memory 에 저장되어 있는 Block data를 처리한다.
+4. Computation 체크포인트 (오렌지색) \
+   장애 발생시 복구할 때 사용할 Streaming computation(예, DStreams) 을 fault-tolerant 파일시스템에 Checkpointing 한다.
 
 ![](https://cdn-images-1.medium.com/max/1200/0\*LVRCVZ3HFMjWfcnO)
 
@@ -37,11 +42,17 @@ Spark Streaming 에서 WAL 을 사용하여 데이터 유실을 막을 수 있�
 
 드라이버 장애 발생할 때 WAL을 사용하여 장애 복구할 수 있다.
 
-1. Driver, Context, Receiver 복구 (오렌지색) Fault-tolerant 파일시스템에 저장한 Checkpointing 파일을 읽어서 Driver, Context, Receiver 를 복구한다.
-2. Block metadata 복구(녹색) LOG파일에서 데이터 정보를 담고 있는 Block metadata를 복구한다.
-3. Jobs 재생성 (빨간색) 복구한 Block metadata를 이용해 장애로 인해 처리하지 못한 데이터를 처리하기 위해 Job 과 RDD 를 다시 생성한다.
-4. LOG파일에 저장한 블록 읽기(파랑색) 복구한 Jobs이 Block data 를 WAL 에서 직접 읽어 데이터를 복원한다.
-5. WAL에 저장하지 못한 버퍼 데이터 재요청 (보라색) WAL에 저장하지 못한 버퍼 데이터는 데이터소스에 재요청해서 받는다.
+1. Driver, Context, Receiver 복구 (오렌지색) \
+   **Fault-tolerant 파일시스템에 저장한 Checkpointing 파일을 읽어 Driver, Context, Receiver를 복구**한다.
+2. Block metadata 복구(녹색) \
+   LOG파일에서 데이터 정보를 담고 있는 Block metadata를 복구한다.
+3. Jobs 재생성 (빨간색) \
+   복구한 Block metadata를 이용해 장애로 인해 처리하지 못한 데이터를 처리하기 위해 Job 과 RDD 를 다시 생성한다.
+4. LOG파일에 저장한 블록 읽기(파랑색) \
+   복구한 Jobs이 Block data 를 WAL 에서 직접 읽어 데이터를 복원한다.
+5.  WAL에 저장하지 못한 버퍼 데이터 재요청 (보라색)
+
+    WAL에 저장하지 못한 버퍼 데이터는 데이터소스에 재요청해서 받는다.
 
 
 
@@ -90,19 +101,19 @@ ssc.union(kafkaStreams).map { case (k, v) => v }
 
 ### WAL 데이터 중복 문제
 
-WAL 을 사용하면 데이터가 유실되는 문제는 해결할 수 있지만, 데이터가 중복될 수 있다. 예를 들어, 데이터를 WAL 에 저장하고 Kafka Offset 을 Zookeeper 에 업데이트하지 못한 상태에서 장애가 발생하면, Spark Streaming 은 Kafka 에서 데이터를 다시 가져와 중복 처리하는 문제가 발생한다. (at-least-one)
+WAL을 사용하면 데이터가 유실되는 문제는 해결할 수 있지만, 데이터가 중복될 수 있다. 예를 들어, 데이터를 WAL 에 저장하고 **Kafka Offset 을 Zookeeper 에 업데이트하지 못한 상태에서 장애가 발생**하면, Spark Streaming 은 Kafka 에서 데이터를 다시 가져와 중복 처리하는 문제가 발생한다. (at-least-one)
 
-데이터 중복 처리 문제를 해결하기 위해 Spark 1.3 버전에서는 Driect Kafka API 도입하였다
+데이터 중복 처리 문제를 해결하기 위해 Spark 1.3 버전에서는 **Direct Kafka API** 도입하였다
 
 
 
 ![](https://cdn-images-1.medium.com/max/1200/0\*SKkd6iATOTF-71BZ)
 
-데이터 수신 완료 여부를 2개의 시스템에서 관리하면, 원자성을 가지고 업데이트할 수 없기 때문에 불일치성이 발생한다. 불일치성을 해결하기 위해 1개의 시스템에서 데이터 수신을 관리할 필요가 있다. Spark Streaming 은 Kafka의 Simple Consumer API 를 사용하여 offset 을 Spark Streaming 에서 직접 관리하는 구조로 변경하여 이를 해결하였다.
+데이터 수신 완료 여부를 2개의 시스템에서 관리하면, 원자성을 가지고 업데이트할 수 없기 때문에 불일치성이 발생한다. 불일치성을 해결하기 위해 1개의 시스템에서 데이터 수신을 관리할 필요가 있다. Spark Streaming 은 Kafka의 Simple Consumer API 를 사용하여 **offset 을 Spark Streaming 에서 직접 관리**하는 구조로 변경하여 이를 해결하였다.
 
 이 방식은 Receiver 와 WAL 을 사용하여 데이터 유실을 방지하는 접근 방식과 다르다. Receiver를 사용하여 데이터를 수신하고 WAL 에 저장하는 대신에 매 배치간격(Batch Interval)마다 Consume 한 데이터의 offset range을 설정하고 나중에 Batch Jobs을 실행할 때, offset range 설정에 따라 데이터를 Kafka Broker에서 읽어오고 offset을 checkpoint하고 복구할 때 사용한다.
 
-Spark Streaming 은 Direct Kafka API 를 사용함으로써 데이터 유실을 방지하고 중복 없이 정확하게 한번(Exactly-one)만 처리할 수 있다.
+**Spark Streaming 은 Direct Kafka API 를 사용함으로써 데이터 유실을 방지하고 중복 없이 정확하게 한번(Exactly-one)만 처리할 수 있다.**
 
 사용법은 다음과 같다.
 
