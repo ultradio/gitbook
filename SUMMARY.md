@@ -8,6 +8,7 @@
   * [Spark Tuning](spark/spark-tuning.md)
   * [Advanced Analytics with Spark](spark/advanced-analytics-with-spark.md)
     * [Anomaly Detection in Network Traffic with K-means](spark/advanced-analytics-with-spark/anomaly-detection.md)
+  * [Delta Lake](spark/delta-lake.md)
   * [Spark Development Environment](spark/spark-development-environment.md)
 * [KUBENETES](kubenetes/README.md)
   * [Kubernetes](kubenetes/kubernetes.md)
