@@ -7,7 +7,7 @@
 스트리밍 데이터와 배치 데이터를 통합해서 분석이 가능하다.\
 또한, 머신러닝, 고급 분석을 ETL 및 SQL 쿼리에 쉽게 통합할 수 있다.
 
-![출처: https://databricks.com/blog/2018/07/19/simplify-streaming-stock-data-analysis-using-databricks-delta.html](<../.gitbook/assets/image (42) (1).png>)
+![출처: https://databricks.com/blog/2018/07/19/simplify-streaming-stock-data-analysis-using-databricks-delta.html](<../.gitbook/assets/image (42) (1) (1).png>)
 
 ## 참고자료
 

@@ -6,7 +6,7 @@ Structured Streaming 은 데이터 스트림을 테이블로 관리한다. 매 �
 
 ![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/image (45).png>)
 
-![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/image (42).png>)
+![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/image (42) (1).png>)
 
 
 
