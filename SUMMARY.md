@@ -2,6 +2,7 @@
 
 * [Home](README.md)
 * [SPARK](spark/README.md)
+  * [MLflow](spark/mlflow.md)
   * [Spark Core](spark/spark-core.md)
   * [Spark Streaming Fault-tolerant](spark/spark-streaming-fault-tolerant.md)
   * [Kubernetes Spark Operator](spark/kubernetes-spark-operator.md)
