@@ -83,7 +83,7 @@ X 범주형 Y 범주형 이면, 카이제곱검정과 로지스틱 회귀분석�
 
 예) 평균(Mean), 중위수(Median), 최빈값(Mode, 빈도가 가장 많은 관측치), 사분위수(Quantile: 최소값, 중앙값, 최대값, 1사분위수, 3사분위수) 등이 있다.
 
-![https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51](<../.gitbook/assets/image (42).png>)
+![https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51](<../.gitbook/assets/image (42) (1).png>)
 
 **변이 통계량**
 
