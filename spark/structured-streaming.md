@@ -12,7 +12,7 @@ Structured Streaming 은 데이터 스트림을 테이블로 관리한다. 매 �
 
 ### **Types of time windows**
 
-![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/image (46).png>)
+![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/image (46) (1).png>)
 
 
 
