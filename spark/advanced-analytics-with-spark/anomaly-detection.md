@@ -20,7 +20,7 @@ K-Means 는 데이터를 K개로 클러스터링하는 ML 모델이다. K 값은
 * 데이터 탐색한다.
   * 결측치, 수치형, 범주형 데이터, 레이블 고유값 점검한다.
 * 모델링한다.
-  * OneHotEncoder로 범주형 데이터를 수치형으로 변환한다.
+  * StringIndexer와 OneHotEncoder로 범주형 데이터를 수치형으로 변환한다.
   * VectorAssembler로 feature vector를 생성한다.
   * StandardScaler로 feature를 Standard Score로 바꾸어 정규화한다.
   * K-Means 모델 생성한다.
