@@ -14,8 +14,6 @@ K-Means 는 데이터를 K개로 클러스터링하는 ML 모델이다. K 값은
 
 ### Anomaly Detection in Network Traffic with K-means <a href="#anomaly-detection-in-network-traffic-with-k-means" id="anomaly-detection-in-network-traffic-with-k-means"></a>
 
-
-
 * Spark 설치한다.
 * Spark Session 설정한다.
 * 데이터 로드한다.
@@ -163,10 +161,11 @@ for k in range(60, 270, 30):
     print(k, runKMeans.clusteringSocre(data, k))
 ```
 
-```
-```
 
 
+### 참고자료
+
+9가지 사례로 익히는 고급 스파크 분석(2판) 도서 (한빛미디어)
 
 
 
