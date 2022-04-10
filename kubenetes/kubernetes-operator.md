@@ -38,7 +38,7 @@ Kubernetes Operator의 동작 방식은
 
 다음은 Kubernetes API로 CR을 동록할 때, Client와 Custom Controller 간의 동작 절차이다.
 
-1\) Reflector는 Kubernetes API에서 지정한 Resource(kind)를 김시하다가,\
+1\) Reflector는 Kubernetes API에서 지정한 Resource(kind)를 시하다가,\
 2\) 새로운 Resource 인스턴스(Object)가 감지되면 Delta Fifo 큐에 넣는다.\
 3\) Informer가 Delta Fifo 큐에서 Object를 꺼내서,\
 4\) 나중에 검색할 수 있도록 Indexer에 전달하면,\
