@@ -32,7 +32,7 @@ K-Means 는 데이터를 K개로 클러스터링하는 ML 모델이다. K 값은
 
 #### Anomaly Detection  <a href="#anomaly-detection-in-network-traffic-with-k-means" id="anomaly-detection-in-network-traffic-with-k-means"></a>
 
-이상 탐지는 새로운 데이터에서 가장 가까운 군집  중심과의 거리를 측정하는 방식으로 진행한다.  거리가 정의한 Threshold 값을 넘어서면 이상한 데이터로 간주한다.&#x20;
+**이상 탐지는 새로운 데이터에서 가장 가까운 군집  중심과의 거리를 측정하는 방식으로 진행한다.  거리가 정의한 Threshold 값을 넘어서면 이상한 데이터로 간주한다.**&#x20;
 
 ```python
 import warnings
