@@ -2,7 +2,6 @@
 
 * [Home](README.md)
 * [SPARK](spark/README.md)
-  * [MLflow](spark/mlflow.md)
   * [Spark Core](spark/spark-core.md)
   * [Spark Streaming Fault-tolerant](spark/spark-streaming-fault-tolerant.md)
   * [Kubernetes Spark Operator](spark/kubernetes-spark-operator.md)
@@ -10,6 +9,7 @@
   * [Advanced Analytics with Spark](spark/advanced-analytics-with-spark.md)
     * [Anomaly Detection in Network Traffic with K-means](spark/advanced-analytics-with-spark/anomaly-detection.md)
   * [Delta Lake](spark/delta-lake.md)
+  * [MLflow](spark/mlflow.md)
   * [Spark Development Environment](spark/spark-development-environment.md)
 * [KUBENETES](kubenetes/README.md)
   * [Kubernetes](kubenetes/kubernetes.md)
