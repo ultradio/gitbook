@@ -58,7 +58,59 @@ Prometheus 메트릭은 라벨과 데이터 필터를 사용하여 다양한 메
 ```yaml
 <metric_name>{<label name>={label value}, ...}
 ```
+다음은 http_requests_total 메트릭의 데이터 모델 정의 예시이다.
 
+|Simple Model                | http_requests_total 5m                          |
+|----------------------------|-------------------------------------------------|
+|Model with label            |http_requests_total {method="GET"} 5m            |
+|Model with label and filter |http_requests_total {job=~".*", method="GET"} 5m |
+
+#### Metric Typpes
+Promethues는 4가지 메트릭 타입(Counter, Gauage, Histogram, Summary)을 정의하여 저장한다.
+
+|Counter                     | Gauge                  |Histogram                       |Summary                 |
+|----------------------------|------------------------|--------------------------------|------------------------|
+|누적개수, 크기              |현재 값, 증가/감소 값    |특정 기간 집계(버킷별)           |특정 기간 집계(버킷별 X)|
+|request count, error count  |memory usage, queue size|response size                   | response time          |
+
+#### Prometheus Configuration
+
+Prometheus server 설정은 prometheus.yaml 파일로 정의한다.
+
+메트릭 수집 간격, Alert 설정, 메트릭 집계 규칙, 어떤 exporter로 부터 메트릭을 수집할지 등을 정의한다.
+
+```yaml
+# 기본적인 전역 설정
+global:
+  scrape_interval:     15s # 15초마다 매트릭을 수집한다.
+  evaluation_interval: 15s # 15초마다 규칙을 평가한다.
+  
+# Alertmanager 설정
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      # - alertmanager:9093
+  
+# 규칙을 처음 한번 로딩하고 'evaluation_interval'설정에 따라 정기적으로 규칙을 평가한다.
+rule_files:
+  - "example_rules.yml"
+  # - "test_rules.yml"
+  
+# 매트릭을 수집할 엔드포인트를 설정. 여기서는 Prometheus 서버 자신을 설정했다.
+scrape_configs:
+  # 이 설정에서 수집한 타임시리즈에 'job=<job_name>'으로 잡의 이름을 설정한다.
+  - job_name: 'prometheus'    # 'metrics_path'라는 설정의 기본 값은 '/metrics'이고 프로토콜 기본값은 'http'이다.
+    static_configs:
+    - targets: ['localhost:9090']
+```
+
+#### PromQL
+
+PromQL은 Prometheus Query Language 이다. \
+PromQL을 이용하여 Prometheus server 에서 메트릭을 필터링, 추출, 조회를 할 수 있다.
+
+String, Scalar, Instant Vector, Range Vector로 메트릭을 조회할 수 있다.
 
 
 
