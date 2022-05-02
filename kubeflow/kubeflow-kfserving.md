@@ -4,7 +4,20 @@ description: KFServing, Transformer, Predictor, Explainer
 
 # KFServing (KServe)
 
-KFServing은 **Kubernetes에 ML Model을 Deploy하고 Serving 기능을 제공하는 도구**이다. InferenceService CR 작성하고 Kubernetes API Server에 등록하여 Model Server를 생성할 수 있다. 트래픽이 없을 때는 scale-to-zero 동작한다.
+본 문서는 KServe 0.8 버전 기준으로 작성하였다.
+
+KServe는 **Kubernetes에 ML Model을 Deploy하고 Serving 기능을 제공하는 Model Inference Platform**이다.
+
+### Control Plane
+InferenceService CR 작성하고 Kubernetes API Server에 등록하면, Transformer, Predictor, Explainer 등을 생성하여 Inference Service 를 구축할 수 있다. Knative Serverless를 기반으로 트래픽이 없을 때는 scale-to-zero 동작한다.
+
+
+Inference할 데이터셋 위치를 정의한다. Predictor에 ML Framework spec을 정의한 후 endpoint spec을 생성한다. 생성한 endpoint spec을 InferenceService Metadata spec에 작성해 InferenceService를 생성한다.
+
+![출처: https://kserve.github.io/website/0.8/modelserving/control_plane/](<../.gitbook/assets/kserve_controlplane.jpg>)
+
+#### Control Plane Components
+
 
 ### Data Plane
 
@@ -36,11 +49,6 @@ XAI로 데이터를 **예측하거나 분류한 결과에 대해 판단 이유�
 | Predict   | POST   | /v1/models/:predict | Request:{"instances": \[]} Response:{"predictions": \[]}                       |
 | Explain   | POST   | /v1/models/:explain | Request:{"instances": \[]} Response:{"predictions": \[], "explainations": \[]} |
 
-### Control Plane
-
-Inference할 데이터셋 위치를 정의한다. Predictor에 ML Framework spec을 정의한 후 endpoint spec을 생성한다. 생성한 endpoint spec을 InferenceService Metadata spec에 작성해 InferenceService를 생성한다.
-
-![출처: https://kserve.github.io/website/modelserving/control\_plane/](<../.gitbook/assets/image (39).png>)
 
 ### 참고자료
 

@@ -10,7 +10,7 @@ description: Knative
 
 Knative는 Knative Serving, Knative Eventing으로 이루어져 있다.
 
-![](<../.gitbook/assets/image (37).png>)
+![](<../.gitbook/assets/knative_arch.png>)
 
 ### Kubernetes Application 배포
 
@@ -172,11 +172,11 @@ spec:
 
 ### Knative 구성요소
 
-![](<../.gitbook/assets/image (34).png>)
+![](<../.gitbook/assets/knative_components.png>)
 
 #### Service
 
-**Knative Application을 정의**한다. Route, Configuration 리소스를 관리한다. Knative Service는 **파드 스펙을 정의**하고 트래픽을 최신 Revision으로 라우팅하거나 고정한 Revision으로 라우팅 하도록 **라우팅 정책**을 정의 할 수 있다.
+**Knative Application을 정의**한다. Route, Configuration 리소스를 관리한다. Knative Service는 **파드 스펙을 정의**하고 트래픽을 최신 Revision으로 라우팅하거나 특정 Revision으로 라우팅할 수 있다.
 
 #### Route
 
@@ -190,13 +190,13 @@ Knative Serving으로 배포할 파드를 정의한다. **Knative Service에 정
 
 **Configuration의 히스토리**로 Configuration이 새로 생성되거나 Configuration 변경될 때 마다 Configuration을 Snapshot하여 Revision으로 남긴다. Route에서 endpoint를 지정하지 않은 Revision은 자동폐기 되며, 쿠버네티스 리소스도 삭제된다.
 
-![출처: https://knative.dev/docs/serving/](<../.gitbook/assets/image (33).png>)
+![출처: https://knative.dev/docs/serving/](<../.gitbook/assets/knative_revision.png>)
 
 ### Knative Serving
 
 Knative는 **트래픽이 들어오면 Knative Serving Activator가 Pod가 없는 Revision을 확인하고 AutoScaler가 파드를 생성**한다. 이후 Pod가 트래픽을 받을 준비가 되면, Ingress Gateway를 통해 트래픽을 Pod에 전달한다.
 
-![출처: https://knative.dev/docs/serving/istio-authorization/](<../.gitbook/assets/image (35).png>)
+![출처: https://knative.dev/docs/serving/istio-authorization/](<../.gitbook/assets/knative_flow.png>)
 
 1\) Ingress Gateway에 요청이 들어오면 Activator에 전달한다.\
 2\) Activator는 요청을 Buffer에 넣는다.\

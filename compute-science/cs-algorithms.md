@@ -21,7 +21,7 @@ for i in range(1, 11):
 
 ```
 
-![](https://lh3.googleusercontent.com/-5FM2gP\_2KA8/YRMiek2D16I/AAAAAAAAZo8/mL990xkpqZsErAlz\_43Uqg-yxixmSkSEgCLcBGAsYHQ/w506-h210/1628643960413769-0.png)
+![](../.gitbook/assets/dijkstra.png)
 
 ### 동적 계획법
 

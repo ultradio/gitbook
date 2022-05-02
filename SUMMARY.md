@@ -67,5 +67,5 @@
   * [Visual Studio Code](tools/visual-studio-code.md)
 * [WEB](web/README.md)
   * [Vue.js](web/vue.js.md)
-* [ETC](etc.md)
-* [gRPC](grpc.md)
+* [ETC](etc/README.md)
+  * [gRPC](etc/grpc.md)

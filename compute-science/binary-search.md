@@ -6,7 +6,7 @@ description: Binary Search
 
 ### **이진 탐색**
 
-![](https://lh3.googleusercontent.com/-q9yUxZgrzn8/YROE13rcnZI/AAAAAAAAZpM/\_8fv7VDMRUQ76iMjh9Wh9t6SkScdzoV8ACLcBGAsYHQ/w493-h315/1628669142352856-0.png)
+![](../.gitbook/assets/binary_tree.jpg)
 
 {% tabs %}
 {% tab title="Python" %}

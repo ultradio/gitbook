@@ -2,7 +2,7 @@
 
 분석할 브랜드와 제품을 선정하고 데이터 수집하여 검색엔진에 저장한다. 저장한 데이터를 탐색적 분석을 수행하여 불용어 사전, 키워드 사전과 및 분석방법론을 정의한다. 분석방법론에 맞는 분석함수를 만들어 데이터 분석을 수행한다. 최종적으로 분석 결과를 마케팅 전략 수립에 활용한다.
 
-![](<../.gitbook/assets/image (42).png>)
+![](<../.gitbook/assets/es_based_platform.png>)
 
 ### Data Collection
 
@@ -21,7 +21,7 @@ webdriver 모듈을 사용하여, 동적 웹페이지와 로그인이 필요한 
 web scraper\
 chrome extension 기반 웹페이지 스크래핑 도구이다.
 
-![](<../.gitbook/assets/image (13).png>)
+![](<../.gitbook/assets/es_based_platform_scrapper.png>)
 
 ### Data Analytics
 

@@ -16,7 +16,7 @@
 사이클이 발생하지 않을 경우만 부모테이블을 업데이트하여 트리에 포함시키고 (union)\
 이 과정을 반복 수행한다.
 
-![](<../.gitbook/assets/image (24).png>)
+![](<../.gitbook/assets/kruskal_mst.png>)
 
 간선을 비용 오름차순으로 정렬한다.
 
