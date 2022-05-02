@@ -46,6 +46,7 @@ Inference할 데이터셋 위치를 정의한다. Predictor에 ML Framework spec
 
 [https://kserve.github.io/website/](https://kserve.github.io/website/)\
 [https://www.kubeflow.org/docs/components/kfserving/](https://www.kubeflow.org/docs/components/kfserving/)
+[https://devocean.sk.com/blog/techBoardDetail.do?ID=163739](https://devocean.sk.com/blog/techBoardDetail.do?ID=163739)
 
 > KFServing 에서 제공하는 Endpoint, Transformer, Explainer, Predictor 외에 더 구성요소를 추가할 예정이며, Outlier Detection 도 그 중 하나이다.
 
