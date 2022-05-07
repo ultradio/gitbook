@@ -12,6 +12,7 @@
   * [Delta Lake](spark/delta-lake.md)
   * [MLflow](spark/mlflow.md)
   * [Spark Development Environment](spark/spark-development-environment.md)
+  * [Spark Configuration](spark/spark-configuration.md)
 * [KUBENETES](kubenetes/README.md)
   * [Kubernetes](kubenetes/kubernetes.md)
   * [Kubernetes Operator](kubenetes/kubernetes-operator.md)
