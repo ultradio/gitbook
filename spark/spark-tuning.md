@@ -18,8 +18,6 @@ spark.serializer org.apache.spark.serializer.KryoSerializer
 ```
 {% endcode %}
 
-
-
 Kryo에 사용자 클래스 등록 Kryo Serializer는 전체 클래스 이름을 저장하기 때문에 자원 낭비가 심하므로 사용자가 원하는 클래스를 등록해서 저장해야 한다.
 
 ```scala
@@ -34,7 +32,7 @@ val sc = new SparkContext(conf)
 
 하지만 데이터를 직렬화하면 메모리를 줄일 수는 있으나, 데이터에 접근할 때 역직렬화 해야 하기 때문에 데이터 접근 시간이 더 오래 걸릴 수 있다.
 
-기본 Storage Level은 StorageLevel.MEMORY\_ONLY 를 사용하며,  RDD를 역직렬화하여 JVM에 저장한다.
+기본 Storage Level은 StorageLevel.MEMORY\_ONLY 를 사용하며, RDD를 역직렬화하여 JVM에 저장한다.
 
 ### Garbage Collection Tuning
 

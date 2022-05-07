@@ -4,21 +4,21 @@ Structured Streaming 은 데이터 스트림을 테이블로 관리한다. 매 �
 
 ### Basic Concepts <a href="#basic-concepts" id="basic-concepts"></a>
 
-![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/image (45).png>)
+![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/spark/spark_structured_streaming_concept.png>)
 
-![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/image (42) (1).png>)
+![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/spark/spark_structured_streaming_concept2.png>)
 
 
 
 ### **Types of time windows**
 
-![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/image (46) (1).png>)
+![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/spark/spark_structured_streaming_window.png>)
 
 
 
 ### **Handling Late Data and Watermarking**
 
-![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/image (43).png>)
+![출처: https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](<../.gitbook/assets/spark/spark_structured_streaming_lake.png>)
 
 
 

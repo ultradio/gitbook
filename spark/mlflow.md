@@ -18,7 +18,7 @@ End-to-End 머신러닝 라이프 사이클을 관리할 수 있는 오픈소스
 
 소규 프로젝트에서 실험용으로는 적합하지만 프로덕션 환경에 적용하기는 많이 부족하다.
 
-![출처: https://databricks.com/wp-content/uploads/2020/06/blog-mlflow-model-1.png](<../.gitbook/assets/image (41).png>)
+![출처: https://databricks.com/wp-content/uploads/2020/06/blog-mlflow-model-1.png](<../.gitbook/assets/spark/spark_mlflow.png>)
 
 ### MLflow와 Kubeflow의 차이점
 

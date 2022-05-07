@@ -8,11 +8,11 @@ description: Kubernetes Spark Operator
 
 Kubernetes에서 Spark Application를 구동하려면 Spark-submit, Spark on Kubernetes Operator를 사용할 수 있다.
 
-![](https://lh3.googleusercontent.com/-isZKJR066HM/YTwJXTaipeI/AAAAAAAAZ-A/R4cZjqJO3WkTGIuVOu4we6OFZtwT19kdACLcBGAsYHQ/w640-h252/image.png)
+![](../.gitbook/assets/spark/kubernetes_spark_operator.jpg)
 
 여기서는 Kubernetes Spark Operator를 사용 것에 대해 알아본다.
 
-![](../.gitbook/assets/image.png)
+![](../.gitbook/assets/spark/kubernetes_spark_operator_flow.png)
 
 ### Spark Operator 구축
 
