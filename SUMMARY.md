@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Home](README.md)
+* [CLOUD](cloud.md)
 * [SPARK](spark/README.md)
   * [Spark Core](spark/spark-core.md)
   * [Spark Streaming Fault-tolerant](spark/spark-streaming-fault-tolerant.md)
