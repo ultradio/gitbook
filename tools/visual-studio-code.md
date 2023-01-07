@@ -18,5 +18,16 @@ description: Auto Complete, Pylance
 ```
 {% endcode %}
 
+System has not been booted with systemd as init system (PID 1). Can't operate
 
+```
+sudo -e /etc/wsl.conf
+
+[boot]
+systemd=true
+
+wsl --shutdown
+
+sudo systemctl status
+```
 
