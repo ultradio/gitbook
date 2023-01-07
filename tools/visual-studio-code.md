@@ -4,19 +4,19 @@ description: Auto Complete, Pylance
 
 # Visual Studio Code
 
-### Auto Complete
+### VSCode Extensions
 
-1\) Extensions > Pylance 설치
+Remote Development
 
-2\) 설정
 
-{% code title="File > Preperences > Settings" %}
-```
-{
-  "python.languageServer": "Pylance",
-}
-```
-{% endcode %}
+
+### Windows SSH
+
+Windows > 설정 > 선택적 기능 > OpenSSH 서버 설치
+
+
+
+### WSL2 systemctl
 
 System has not been booted with systemd as init system (PID 1). Can't operate
 
@@ -31,3 +31,18 @@ wsl --shutdown
 sudo systemctl status
 ```
 
+
+
+### Auto Complete
+
+1\) Extensions > Pylance 설치
+
+2\) 설정
+
+{% code title="File > Preperences > Settings" %}
+```
+{
+  "python.languageServer": "Pylance",
+}
+```
+{% endcode %}
